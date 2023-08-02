@@ -1,0 +1,110 @@
+<menu></menu>
+<br><br><br><br><br>
+ <!-- Contenu de la page -->
+ <div class="container mt-3">
+  <!-- Formulaire d'inscription -->
+  <div class="row justify-content-center mt-4">
+    <div class="bg-info">
+      {{apprenant|json}}
+    </div>
+    <div class="col-12 col-md-6">
+      <hr>
+      <h2 class="card-title text-center">Ajouter Un Apprenant</h2>
+      <hr><br>
+      <div class="card">
+        <div class="card-body">
+          <form #etuForm="ngForm" (ngSubmit)="saveApp()">
+            <div class="mb-3">
+              <label for="number" class="form-label">
+                <i class="fas fa-id-card"></i> Numero
+              </label>
+              <input [(ngModel)]="apprenant.appNumber" type="text"
+                class="form-control" id="number" placeholder="Entrez votre numero"
+                name="number">
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">
+                <i class="fas fa-user"></i> Nom
+              </label>
+              <input [(ngModel)]="apprenant.nom" type="text"
+                class="form-control" id="name"
+                placeholder="Entrez votre nom " name="nom">
+            </div>
+            <div>
+            <label for="prenom" class="form-label">
+              <i class="fas fa-user"></i> Prenom
+            </label>
+            <input [(ngModel)]="apprenant.prenom" type="text"
+              class="form-control" id="prenom"
+              placeholder="Entrez votre Prenom" name="prenom">
+          </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">
+                <i class="fas fa-envelope"></i> Adresse email
+              </label>
+              <input [(ngModel)]="apprenant.email" type="email"
+                class="form-control" id="email"
+                placeholder="Entrez votre email" name="email">
+            </div>
+            <div class="mb-3">
+              <label for="adresse" class="form-label">
+                <i class="fas fa-envelope"></i> Adresse
+              </label>
+              <input [(ngModel)]="apprenant.adresse" type="text"
+              class="form-control" id="adresse"
+              placeholder="Entrez votre adresse" name="adresse">
+            </div>
+            <div class="mb-3">
+              <label for="profilePic" class="form-label">
+                <i class="fas fa-image"></i> Photo de profil
+              </label>
+              <input [(ngModel)]="apprenant.photoUrl" type="file"
+              class="form-control" id="profilePic"
+              accept="image/*" name="photoUrl">
+          </div>
+          <div class="mb-3">
+            <label for="departement" class="form-label">
+              <i class="fas fa-image"></i> Departement
+            </label>
+            <select [(ngModel)]="apprenant.departement" class="form-control"
+              name="departement">
+              <option value="">--Selectionner un departement</option>
+              <option *ngFor="let dept of getListeDepartements()"
+              value="{{dept.nom}}">{{dept.nom}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+          <label for="filiere" class="form-label">
+            <i class="fas fa-image"></i> Filiere
+          </label>
+          <select class="form-control" name="filiere" id="filiere">
+            <option value="">--Selectionner une Filiere</option>
+            <option *ngFor="let fil of getListeFilieres()"
+            value="{{fil.nom}}">{{fil.nom}}</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="promotion" class="form-label">
+            <i class="fas fa-image"></i> Promotion
+          </label>
+          <Select class="form-control" name="promotion" id="promotion">
+            <option value="">--Selectionner une Promotion</option>
+            <option *ngFor="let prom of getListePromotion()"
+            value="{{prom.promNumber}}">Promotion {{prom.promNumber}}</option>
+          </Select>
+        </div>
+            <button type="submit" class="btn btn-success">
+              <i class="fas fa-user-plus"></i> Ajouter
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+
+<app-footer></app-footer>
+
+

@@ -1,0 +1,71 @@
+<menu></menu>
+<br><br><br><br><br>
+ <!-- Contenu de la page -->
+ <div class="container mt-3">
+  <!-- Formulaire d'inscription -->
+  <div class="row justify-content-center mt-4">
+    <div class="bg-info">
+      {{filiere|json}}
+    </div>
+    <div class="col-12 col-md-6">
+      <hr>
+      <h2 class="card-title text-center">Ajouter Une Filière</h2>
+      <hr><br>
+      <div class="card">
+        <div class="card-body">
+          <form #etuForm="ngForm" (ngSubmit)="saveFil()">
+            <div class="mb-3">
+              <label for="name" class="form-label">
+                <i class="fas fa-percent"></i> Numero Filière
+              </label>
+              <input name="numero" [(ngModel)]="filiere.filNumber"
+              type="text" class="form-control" id="name" placeholder="Entrez le numero du Filière">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">
+                <i class="fas fa-calendar"></i> Date d'integration de la filière
+              </label>
+              <input type="date" name="date" [(ngModel)]="filiere.dateFil"
+              class="form-control" id="email" placeholder="Entrez La date d'integration de la filiére">
+            </div>
+            <div class="mb-3">
+              <label for="adresse" class="form-label">
+                <i class="fas fa-percentage"></i> Pourcentage de Reussites
+              </label>
+              <input type="text" name="pourcentage" [(ngModel)]="filiere.pourFil"
+              class="form-control" id="adresse" placeholder="Entrez le pourcetage des Certifiés dans cette filieres">
+            </div>
+            <div class="mb-3">
+              <label for="adresse" class="form-label">
+                <i class="fas fa-percentage"></i> Taux de Reussites
+              </label>
+              <input type="text" [(ngModel)]="filiere.tauxFil" name="taux"
+              class="form-control" id="adresse" placeholder="Entrez le taux de reussite sur la dernière certification">
+            </div>
+            <div class="mb-3">
+              <label for="adresse" class="form-label">
+                <i class="fas fa-deskpro"></i> Description
+              </label>
+              <textarea name="description" [(ngModel)]="filiere.description"
+              id="" cols="30" rows="10" class="form-control" placeholder="Description"></textarea>
+
+            </div>
+
+
+
+
+
+            <button type="submit" class="btn btn-success">
+              <i class="fas fa-group-plus"></i> Ajouter
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+
+<app-footer></app-footer>
+
+

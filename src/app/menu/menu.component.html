@@ -1,0 +1,52 @@
+<nav class="navbar  navbar-expand-md fixed-top navbar-light bg-light py-3">
+  <div class="container">
+    <!-- Logo à gauche -->
+    <a class="navbar-brand" href="#">
+      <img src="../../assets/logo1.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+
+    </a>
+
+    <!-- Éléments au milieu -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-home"></i> Accueil</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-graduate"></i> Apprenants</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/listeApprenant"><i class="fas fa-cog"></i> Liste des Apprenants</a></li>
+            <li><a class="dropdown-item" routerLink="/ajoutApprenant"><i class="fas fa-cog"></i> Ajouter Un Apprenats</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-address-card"></i> Promotions</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/listePromotion"><i class="fas fa-cog"></i> Liste des Promotions</a></li>
+            <li><a class="dropdown-item" routerLink="/ajoutPromotion"><i class="fas fa-cog"></i> Ajouter Une Promotion</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-arrows-to-eye"></i> Departements</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/listeDepartement"><i class="fas fa-cog"></i> Liste des Departements</a></li>
+            <li><a class="dropdown-item" routerLink="/ajoutDepartement"><i class="fas fa-cog"></i> Ajouter Un Departement</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-cloud"></i> Formations</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/listeFiliere"><i class="fas fa-cog"></i> Liste des Formations</a></li>
+            <li><a class="dropdown-item" routerLink="/ajoutFiliere"><i class="fas fa-cog"></i> Ajouter Une Formation</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Barre de recherche à droite -->
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+</nav>

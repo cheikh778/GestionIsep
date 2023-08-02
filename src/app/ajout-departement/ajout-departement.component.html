@@ -1,0 +1,75 @@
+<menu></menu>
+<br><br><br><br><br>
+ <!-- Contenu de la page -->
+ <div class="container mt-3">
+  <!-- Formulaire d'inscription -->
+  <div class="row justify-content-center mt-4">
+    <div class="bg-info">
+      {{departement|json}}
+    </div>
+    <div class="col-12 col-md-6">
+      <hr>
+      <h2 class="card-title text-center">Ajouter Un Departement</h2>
+      <hr><br>
+      <div class="card">
+        <div class="card-body">
+          <form #etuForm="ngForm" (ngSubmit)="saveDep()">
+            <div class="mb-3">
+              <label for="name" class="form-label">
+                <i class="fas fa-percent"></i> Numero Departement
+              </label>
+              <input [(ngModel)]="departement.depNumber"
+              type="text" class="form-control" name="numero"
+              id="name" placeholder="Entrez le numero du Departement">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">
+                <i class="fas fa-calendar"></i> Date de Creation du Departement
+              </label>
+              <input [(ngModel)]="departement.dateDep"
+              type="date" name="date"
+              class="form-control" id="email" placeholder="Entrez La date de création du departement">
+            </div>
+            <div class="mb-3">
+              <label for="adresse" class="form-label">
+                <i class="fas fa-percentage"></i> Pourcentage de Reussites
+              </label>
+              <input [(ngModel)]="departement.pourDep"
+              type="text" name="pourcentage"
+              class="form-control" id="adresse" placeholder="Entrez le pourcetage des Certifiés dans ce departement">
+            </div>
+            <div class="mb-3">
+              <label for="adresse" class="form-label">
+                <i class="fas fa-percentage"></i> Taux de Reussites
+              </label>
+              <input [(ngModel)]="departement.tauxDep"
+              type="text" class="form-control" name="taux"
+              id="adresse" placeholder="Entrez le taux de reussite sur la dernière certification">
+            </div>
+            <div class="mb-3">
+              <label for="adresse" class="form-label">
+                <i class="fas fa-deskpro"></i> Description
+              </label>
+              <textarea [(ngModel)]="departement.description"
+              name="description" id="" cols="30" rows="10" class="form-control" placeholder="Description"></textarea>
+
+            </div>
+
+
+
+
+
+            <button type="submit" class="btn btn-success">
+              <i class="fas fa-group-plus"></i> Ajouter
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+
+<app-footer></app-footer>
+
+

@@ -1,0 +1,36 @@
+
+.card {
+  height: 400px;
+  box-shadow: 0 7px 7px #582900;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  background-position: center;
+  box-shadow: 0 7px 7px #582900;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-shadow: 0 7px 7px #582900;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+  box-shadow: 0 7px 7px #582900;
+  border-radius: 10px;
+}
+
+.card-text {
+  margin-bottom: 0.5rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  
+}

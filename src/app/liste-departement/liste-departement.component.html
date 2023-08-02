@@ -1,0 +1,47 @@
+<menu></menu>
+<br><br><br><br><br><br>
+<div class="container">
+
+  <div class="btn btn-success">
+    <a href="/ajoutDepartement" style="color: white; text-decoration: none;">
+      <i class="fas fa-user-plus"></i> Ajouter Un Département
+    </a>
+  </div>
+  <hr>
+  <h2 class="text-center">Liste des Départements</h2>
+  <hr>
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nom Département</th>
+          <th scope="col">Date de la filière</th>
+          <th scope="col">Pourcentage de Réussites</th>
+          <th scope="col">Taux de Réussites</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let departements of departements">
+          <td>{{ departements.depNumber }}</td>
+          <td>{{ departements.nom }}</td>
+          <td>{{ departements.dateDep }}</td>
+          <td>{{ departements.pourDep }}</td>
+          <td>{{ departements.tauxDep }}</td>
+          <td>
+            <a class="btn btn-secondary" [routerLink]="['/detailDepartement']" [queryParams]="{ num: departements.depNumber }">
+              <i class="fas fa-info"></i> Détails
+            </a>
+            &nbsp;
+            <a class="btn btn-danger" (click)="deleteDepartement(departements.depNumber)">
+              <i class="fas fa-trash"></i> Supprimer
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-footer></app-footer>

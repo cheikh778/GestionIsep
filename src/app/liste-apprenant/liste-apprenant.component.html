@@ -1,0 +1,53 @@
+<menu></menu>
+<br><br><br><br><br><br>
+<div class="container"style="margin-top: 2%;">
+
+  <div class="btn btn-success" >
+    <button class="btn btn-succes" style="color: white;" [routerLink]="['/ajoutApprenant']" routerLinkActive="router-link-active" ><i class="fas fa-user-plus"></i>Ajouter Un Aprenant</button>
+  </div>
+  <hr>
+  <h2 class="text-center">Liste des Apprenants</h2>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let apprenant of apprenant">
+        <div class="card mb-4 shadow">
+
+          <div class="card-img-top" style="height: 200px; background-image: url('{{apprenant.photoUrl}}'); background-size: cover;"></div>
+
+          <div class="card-body">
+
+            <h5 class="card-title">{{apprenant.nom}} {{apprenant.prenom}}</h5>
+            <p class="card-text">{{apprenant.filiere}}, {{apprenant.departement}}</p>
+
+            <p class="card-text"><strong>Adresse:</strong> {{apprenant.adresse}}</p>
+            <p class="card-text"><strong>Email:</strong> {{apprenant.email}}</p>
+
+            <div class="buttons">
+              <a class="btn btn-secondary" [routerLink]="['/detailApprenant']" [queryParams]="{num: apprenant.appNumber}">
+                <i class="fas fa-info"></i> Détails
+              </a>
+              &nbsp;
+              <a class="btn btn-danger" (click)="deleteApprenant(apprenant.appNumber)">
+                <i class="fas fa-trash"></i> Supprimer
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+<br><br><br>
+
+
+<app-footer></app-footer>
+
+

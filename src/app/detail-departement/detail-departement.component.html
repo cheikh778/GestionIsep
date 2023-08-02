@@ -1,0 +1,38 @@
+<menu></menu>
+<br><br><br><br><br><br><br>
+
+
+<div class="container">
+  <hr>
+  <h2 class="text-center">Details Du departement</h2>
+  <hr>
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title text-center">{{ departement.nom }}</h2>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <h6 class="card-text"><strong>Date de Creation:</strong> {{ departement.dateDep }}</h6>
+          <h6 class="card-text"><strong>Pourcentage de reussite:</strong> {{ departement.pourDep }}%</h6>
+          <h6 class="card-text"><strong>Taux de reussite:</strong> {{ departement.tauxDep }}%</h6>
+
+        </div>
+        <div class="col-md-6">
+          <h2>Description:</h2>{{departement.description}}
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <a class="btn btn-primary" [routerLink]="['/detailApprenant']" [queryParams]="{num: departement.depNumber}">
+        <i class="fas fa-edit"></i> Editer
+      </a>
+      &nbsp;
+      <a class="btn btn-danger" (click)="supprimerDepartement()">
+        <i class="fas fa-trash"></i> Supprimer
+      </a>
+    </div>
+  </div>
+</div>
+
+<br><br><br><br><br>
+<app-footer></app-footer>
